@@ -10,7 +10,6 @@ from ..permissions import (IsAnnotationApprover, IsInProjectOrAdmin,
                            IsOwnAnnotation, IsProjectAdmin)
 from ..serializers import ApproverSerializer
 
-
 class AnnotationList(generics.ListCreateAPIView):
     pagination_class = None
     permission_classes = [IsAuthenticated & IsInProjectOrAdmin]

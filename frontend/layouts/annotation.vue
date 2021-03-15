@@ -74,7 +74,7 @@
               </template>
               <span>{{ $t('annotation.commentTooltip') }}</span>
             </v-tooltip>
-            
+
             <settings
               v-model="options"
               :errors="errors"
@@ -104,6 +104,10 @@
             <metadata-box
               :metadata="JSON.parse(currentDoc.meta)"
             />
+            <a target="_blank" :href="JSON.parse(currentDoc.meta).link">Ebay Link</a>
+            <a target="_blank" :href="JSON.parse(currentDoc.meta).image">
+              <img style="width:100%" :src="JSON.parse(currentDoc.meta).image" />
+            </a>
           </v-col>
         </v-row>
       </v-container>
@@ -120,6 +124,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+
     </v-main>
     <bottom-navigator
       v-model="page"
